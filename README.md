@@ -43,7 +43,11 @@ RTL Code:
 
 TestBench:
 
-Output waveform:
+Output waveform:<img width="1919" height="1079" alt="Screenshot 2025-09-16 171118" src="https://github.com/user-attachments/assets/92d8f6b4-a8ab-4519-8045-5cb68dbe42e5" />
+<img width="1919" height="1079" alt="Screenshot 2025-09-16 203931" src="https://github.com/user-attachments/assets/7e00512a-981e-4ba3-a4b8-cde273335412" />
+<img width="1919" height="1079" alt="Screenshot 2025-09-16 174326" src="https://github.com/user-attachments/assets/596e5367-d585-497d-adf8-849455a278ff" />
+<img width="1919" height="1077" alt="Screenshot 2025-09-16 171734" src="https://github.com/user-attachments/assets/2c0c55cd-6999-4b63-98a8-7b0ff69071f4" />
+
 
 Conclusion:
 
