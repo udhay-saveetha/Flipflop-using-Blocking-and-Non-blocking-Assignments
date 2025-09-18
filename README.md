@@ -41,12 +41,92 @@ T FF
 
 RTL Code:
 
+      SR FF
+      module srff(s,r,clk,rst,q);
+      input s,r,clk,rst;
+      output reg q;
+      always@(posedge clk)
+      begin
+      if(rst==1)
+      q=0;
+      else
+      begin
+      case({s,r})
+      2'b00:q=q;
+      2'b01:q=0;
+      2'b10:q=1;
+      2'b11:q=1'bX;
+      endcase
+      end
+      end
+      endmodule
+
+      
+      D FF
+      module tff(clk,rst,t,q);
+      input clk,rst,t;
+      output reg q;
+      always @(posedge clk)
+      begin
+      if (rst==1)
+      q=1'b0;
+      else if (t==0)
+      q=q;
+      else
+      q=~q;
+      end
+      
+
+
+      TFF
+      module tff(clk,rst,t,q);
+      input clk,rst,t;
+      output reg q;
+      always @(posedge clk)
+      begin
+      if (rst==1)
+      q=1'b0;
+      else if (t==0)
+      q=q;
+      else
+      q=~q;
+      end
+      endmodule
+
+
+      JK FF
+      module tb_jk_ff;
+      reg clk;
+      reg J, K;
+      wire Q;
+      jk_ff uut (.clk(clk),.J(J),.K(K),.Q(Q));
+      initial begin
+      clk=0;
+      forever #20 clk=~clk;
+      end
+      initial begin
+      J = 0; K = 0;
+      #100 J=0; K=0;  
+      #100 J=0; K=1; 
+      #100 J=1; K=0;  
+      #100 J=1; K=1;  
+      #100 J=0; K=1; 
+      #100 J=1; K=0;  
+      #100 J=1; K=1;  
+      end
+      endmodule
+
+      
 TestBench:
 
-Output waveform:<img width="1919" height="1079" alt="Screenshot 2025-09-16 171118" src="https://github.com/user-attachments/assets/92d8f6b4-a8ab-4519-8045-5cb68dbe42e5" />
+Output waveform:
+D FF
+<img width="1919" height="1079" alt="Screenshot 2025-09-16 171118" src="https://github.com/user-attachments/assets/92d8f6b4-a8ab-4519-8045-5cb68dbe42e5" />
+SR FF
 ![WhatsApp Image 2025-09-16 at 21 14 00_52a805ae](https://github.com/user-attachments/assets/47762730-f6c5-4b1a-a87a-7c66d7d1f4aa)
-
+JK TT
 <img width="1919" height="1079" alt="Screenshot 2025-09-16 174326" src="https://github.com/user-attachments/assets/596e5367-d585-497d-adf8-849455a278ff" />
+T FF
 <img width="1919" height="1077" alt="Screenshot 2025-09-16 171734" src="https://github.com/user-attachments/assets/2c0c55cd-6999-4b63-98a8-7b0ff69071f4" />
 
 
